@@ -26,7 +26,7 @@
 * Save any of your game's functions as methods, and call them underneath your object declaration using event listeners.
 * Don't forget to place your global variables and functions above your object.
 
---Remember: global variables, then objects, then calls.
+- Remember: global variables, then objects, then calls.
 
 
 Definitely talk with a TA or your instructor if you get tripped up during this challenge.
