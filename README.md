@@ -1,26 +1,37 @@
 # Word-Guess-Game
 
 
-* establish your themed array of words
-
-* Display the following on the page:
-
-~Press any key to get started!~
-~Wins: (# of times user guessed the word correctly).~
-* have the computer chose a random word from the array
+* ~establish your themed array of words~
+* ~have the computer chose a random word from the array~
 * display the number of dashes corresponding to the number of letters in the random word chosen
   - As the user guesses the correct letters, reveal them: m a d o _  _ a
 
-~display number of Guesses Remaining: (# of guesses remaining for the user).~
-~display letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).~
+* Display the following on the page:
 
-* Use key events to listen for the letters that your players will type
+* ~Press any key to get started!~
+* Wins: (# of times user guessed the word correctly).
+  -display number of wins
+  -once the word is complete, player wins if guesses => 0
+  -save number of wins
+* Loses: 
+   -display number of loses
+   -save number of loses
+   -if guesses=0 and word is not complete, player loses
+
+* display number of Guesses Remaining: (# of guesses remaining for the user)
+  - set number of guessing you receive at beginning
+  - take away one guess for every letter press
+  - if guesses = 0 and word is not complete, you lose
+  
+* ~display letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).~
+
+* ~Use key events to listen for the letters that your players will type~
+
 * After the user wins/loses the game should automatically choose another word and make the user play it* 
 
 
+
 ### Word Guess Game Bonuses
-
-
 * Play a sound or song when the user guesses their word correctly, like in our demo
 * Write some stylish CSS rules to make a design that fits your game's theme
 * HARD MODE: Organize your game code as an object, except for the key events to get the letter guessed. This will be a challenge if you haven't coded with JavaScript before, but we encourage anyone already familiar with the language to try this out.
