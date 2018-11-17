@@ -1,18 +1,20 @@
 # Word-Guess-Game
 
 
-* Choose a theme for your game
-* Use key events to listen for the letters that your players will type
+* establish your themed array of words
 
 * Display the following on the page:
+
 * Press any key to get started!
 * Wins: (# of times user guessed the word correctly).
-  - If the word is madonna, display it like this when the game starts: _ _ _ _ _ _ _.
-  - As the user guesses the correct letters, reveal them: m a d o _  _ a.
+* have the computer chose a random word from the array
+* display the number of dashes corresponding to the number of letters in the random word chosen
+  - As the user guesses the correct letters, reveal them: m a d o _  _ a
 
-* Number of Guesses Remaining: (# of guesses remaining for the user).
-* Letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
+* display number of Guesses Remaining: (# of guesses remaining for the user).
+* display letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
 
+* Use key events to listen for the letters that your players will type
 * After the user wins/loses the game should automatically choose another word and make the user play it* 
 
 
@@ -27,8 +29,5 @@
 * Don't forget to place your global variables and functions above your object.
 
 - Remember: global variables, then objects, then calls.
-
-
-Definitely talk with a TA or your instructor if you get tripped up during this challenge.
 
 
