@@ -1,5 +1,5 @@
 
-//VARIABLES
+//BASE VARIABLES
 //===========================================
 
 var wordChoices = [
@@ -31,7 +31,7 @@ var remainingGuesses = startingGuesses;
 //VARIABLES FOR LINKING JS TO HTML CLASSES
 var winsText = document.querySelector(".wins");
 var lossesText = document.querySelector(".losses");
-var guessRemainingText = document.querySelector(".guesses");
+var remainingGuessesText = document.querySelector(".guesses");
 var lettersGuessed = document.querySelector(".letters-guessed");
 var userGuessed = [""];
 var blankText = document.querySelector(".word-blanks");
@@ -47,7 +47,13 @@ var blankText = document.querySelector(".word-blanks");
             answerSpaces[i]="_";
         }
         remainingLetters = computerSelect.length;
+
+        //this doesn't reset the guessed keys tho.....
         blankText.textContent = answerSpaces.join(" ");
+
+        //also need to reset the guesses remaining
+
+
     }
 
 
@@ -65,11 +71,11 @@ for (var i = 0; i < computerSelect.length; i++) {
 
 var remainingLetters = computerSelect.length;
 
-// START UP COMPUTER SELECTION • SHOWs THE PLAYER THE ANSWER SPACES AS JOINED UP STRING
+// START UP COMPUTER SELECTION • SHOWS THE PLAYER THE ANSWER SPACES AS JOINED UP STRING
 console.log(answerSpaces.join(" "));
 
-gameReset ();
 
+//INSIDE ON KEY UP
 //=============================================
 
 //RUNS WHENEVER PLAYER PRESSES A KEY
@@ -83,14 +89,19 @@ document.onkeyup = function(event) {
         if (remainingGuesses === 0) {
             alert("You Lose");
             losses++;
+            lossesText.textContent = ("Losses: " + losses);
             gameReset();
-        } else if (remainingLetters === 0) {
+        } else if (remainingLetters === 0 ) {
             alert("You Win!");
             wins++;
+            winsText.textContent = ("Wins: " + wins);
             gameReset();
         } else {
             //IF/ELSE STATEMENT TO ONLY ALLOW LETTERS AS GUESSES
             if (userGuess === "a" || userGuess === "b" || userGuess === "c" || userGuess === "d" || userGuess === "e" || userGuess === "f" || userGuess === "g" || userGuess === "h" || userGuess === "i" || userGuess === "j" || userGuess === "k" || userGuess === "l" || userGuess === "m" || userGuess === "n" || userGuess === "o" || userGuess === "p" || userGuess === "q" || userGuess === "r" || userGuess === "s" || userGuess === "t" || userGuess === "u" || userGuess === "v" || userGuess === "w" || userGuess === "x" || userGuess === "y" || userGuess === "z") {
+
+                remainingGuesses--;
+                remainingGuessesText.textContent = ("Guesses Remaining: " + remainingGuesses);
 
                 //FOR LOOP PLUS IF/ELSE TO COMPARE LETTER GUESSES WITH THE INDEX OF EACH CHARACTER IN THE COMPUTER SELECTED WORD
                 for (var j =0; j < computerSelect.length; j++) {
