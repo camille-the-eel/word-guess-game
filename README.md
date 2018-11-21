@@ -30,15 +30,30 @@
 * After the user wins/loses the game should automatically choose another word and make the user play it* 
 
 
+TO DO Word Game:
 
-### Word Guess Game Bonuses
-* Play a sound or song when the user guesses their word correctly, like in our demo
-* Write some stylish CSS rules to make a design that fits your game's theme
-* HARD MODE: Organize your game code as an object, except for the key events to get the letter guessed. This will be a challenge if you haven't coded with JavaScript before, but we encourage anyone already familiar with the language to try this out.
-* Save your whole game and its properties in an object.
-* Save any of your game's functions as methods, and call them underneath your object declaration using event listeners.
-* Don't forget to place your global variables and functions above your object.
+Both win and lose don’t reset the guesses remaining or letters guessed
 
-- Remember: global variables, then objects, then calls.
+Will randomly alert “you win” when you have not won
+
+First letter pressed doesn’t show up in “Letters guessed” but a comma does appear for it
+
+Don’t want game to register or display repeat letters
+
+Something completely wrong with the logic for winning and losing
+
+Blank spaces are only visible once you get a letter correct
+
+DONE
+remainingGuessesText … can’t get it to display
+Have not set wins or loses
+Win and lose don’t register upon winning key pressed, registers on the next key —— this is because it’s within the on key up
+
+
+
+
+Layout
+
+If start up is all within one function, and gameplay in another, reset occurs when start up is called vs having a separate function to “clear”
 
 
