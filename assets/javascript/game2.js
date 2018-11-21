@@ -1,4 +1,6 @@
 
+function gameStart () {
+
 //BASE VARIABLES
 //===========================================
 
@@ -23,9 +25,10 @@ var wordChoices = [
     "nebulus", 
     "avenseguim"
 ];
+
 var wins = 0;
 var losses = 0;
-var startingGuesses = 15;
+var startingGuesses = 10;
 var remainingGuesses = startingGuesses;
 
 //VARIABLES FOR LINKING JS TO HTML CLASSES
@@ -39,49 +42,26 @@ var blankText = document.querySelector(".word-blanks");
 //FUNCTIONS
 //=============================================
 
-//GAME RESET
-    function gameReset () {
-       
-        //RESETS COMPUTER SELECTED WORD
-        computerSelect = wordChoices[Math.floor(Math.random() * wordChoices.length)];
-        answerSpaces = [];
-        for (var i = 0; i < computerSelect.length; i++) {
-            answerSpaces[i]="_";
-        }
-        remainingLetters = computerSelect.length;
-        
+// //GAME RESET
+//     function gameReset () {
+//         var computerSelect = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+//         var answerSpaces = [];
+//         for (var i = 0; i < computerSelect.length; i++) {
+//             answerSpaces[i]="_";
+//         }
+//         remainingLetters = computerSelect.length;
 
-        //RESETS BLANKS
-        blankText.textContent = answerSpaces.join(" ");
+//         //this doesn't reset the guessed keys tho.....
+//         blankText.textContent = answerSpaces.join(" ");
 
-        //RESETS GUESSES REMAINING & DISPLAY HTML
-        startingGuesses = 15;
-        remainingGuesses = 15;
-        remainingGuessesText.textContent = startingGuesses;
+//         //also need to reset the guesses remaining
 
-        //RESETS THE USER GUESSED LETTERS
-        userGuessed = [];
-        lettersGuessed.textContent = userGuessed;
-    }
+
+//     }
 
 
 //GAME PLAY
 //============================================
-
-function gameOutcome () {
-
-    if (remainingGuesses === 0) {
-        alert("You Lose");
-        losses++;
-        lossesText.textContent = losses;
-        gameReset();
-    } else if (remainingLetters === -1 ) {
-        alert("You Win!");
-        wins++;
-        winsText.textContent = wins;
-        gameReset();
-    }
-};
 
 //CHOSES A RANDOM WORD FROM ARRAY "WORDCHOICES"
 var computerSelect = wordChoices[Math.floor(Math.random() * wordChoices.length)];
@@ -97,6 +77,7 @@ var remainingLetters = computerSelect.length;
 // START UP COMPUTER SELECTION • SHOWS THE PLAYER THE ANSWER SPACES AS JOINED UP STRING
 console.log(answerSpaces.join(" "));
 
+} //function gameStart ends
 
 //INSIDE ON KEY UP
 //=============================================
@@ -112,7 +93,7 @@ document.onkeyup = function(event) {
             if (userGuess === "a" || userGuess === "b" || userGuess === "c" || userGuess === "d" || userGuess === "e" || userGuess === "f" || userGuess === "g" || userGuess === "h" || userGuess === "i" || userGuess === "j" || userGuess === "k" || userGuess === "l" || userGuess === "m" || userGuess === "n" || userGuess === "o" || userGuess === "p" || userGuess === "q" || userGuess === "r" || userGuess === "s" || userGuess === "t" || userGuess === "u" || userGuess === "v" || userGuess === "w" || userGuess === "x" || userGuess === "y" || userGuess === "z") {
 
                 remainingGuesses--;
-                remainingGuessesText.textContent = remainingGuesses;
+                remainingGuessesText.textContent = ("Guesses Remaining: " + remainingGuesses);
 
                 //FOR LOOP PLUS IF/ELSE TO COMPARE LETTER GUESSES WITH THE INDEX OF EACH CHARACTER IN THE COMPUTER SELECTED WORD
                 for (var j =0; j < computerSelect.length; j++) {
@@ -123,14 +104,13 @@ document.onkeyup = function(event) {
                         blankText.textContent = answerSpaces.join(" ");
                     }
                     else if (computerSelect[j] !== userGuess) { 
-                        lettersGuessed.textContent = userGuessed;
+                        lettersGuessed.textContent = ("Letters Guessed: " + userGuessed);
                     }
                 }
-
                 //FIX! MAKE IF/ELSE SO THE LETTERS DON'T REPEAT
                 //ALSO WHY WON'T THE FIRST ONE SHOW UP?
                 userGuessed.push(" " + userGuess);
-                gameOutcome();
+                // guessRemaining.textContent("");
             }
             else {
                 alert("Press a letter, smartass.")
@@ -138,3 +118,15 @@ document.onkeyup = function(event) {
 
         }
 
+        //WINS, LOSSES, GAMEPLAY ---WINS DOESN'T WORK?? WILL ALERT AT RANDOM TIMES • RESET ALSO DOESN'T WORK
+        // if (remainingGuesses === 0) {
+        // alert("You Lose");
+        // losses++;
+        // lossesText.textContent = ("Losses: " + losses);
+        // gameReset();
+        // } else if (remainingLetters === 0 ) {
+        // alert("You Win!");
+        // wins++;
+        // winsText.textContent = ("Wins: " + wins);
+        // gameReset();
+        // } 
