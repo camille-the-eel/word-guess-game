@@ -3,7 +3,8 @@ Harry Potter themed word guessing game, complete the spell before you run out of
 
 Javascript application that dynamically alters HTML based on user input.
 
-=============================================================================================================================
+=======================================================================================
+
 
 
 ![](word-guess-giphy.gif)
