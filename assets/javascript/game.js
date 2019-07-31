@@ -108,33 +108,31 @@ document.onkeyup = function(event) {
     var userGuess = event.key;
     console.log(userGuess);
 
-            //IF/ELSE STATEMENT TO ONLY ALLOW LETTERS AS GUESSES
-            if (userGuess === "a" || userGuess === "b" || userGuess === "c" || userGuess === "d" || userGuess === "e" || userGuess === "f" || userGuess === "g" || userGuess === "h" || userGuess === "i" || userGuess === "j" || userGuess === "k" || userGuess === "l" || userGuess === "m" || userGuess === "n" || userGuess === "o" || userGuess === "p" || userGuess === "q" || userGuess === "r" || userGuess === "s" || userGuess === "t" || userGuess === "u" || userGuess === "v" || userGuess === "w" || userGuess === "x" || userGuess === "y" || userGuess === "z") {
+        //IF/ELSE STATEMENT TO ONLY ALLOW LETTERS AS GUESSES
+        if (userGuess === "a" || userGuess === "b" || userGuess === "c" || userGuess === "d" || userGuess === "e" || userGuess === "f" || userGuess === "g" || userGuess === "h" || userGuess === "i" || userGuess === "j" || userGuess === "k" || userGuess === "l" || userGuess === "m" || userGuess === "n" || userGuess === "o" || userGuess === "p" || userGuess === "q" || userGuess === "r" || userGuess === "s" || userGuess === "t" || userGuess === "u" || userGuess === "v" || userGuess === "w" || userGuess === "x" || userGuess === "y" || userGuess === "z") {
+            
+            userGuessed.push(" " + userGuess);
+            remainingGuesses--;
+            remainingGuessesText.textContent = remainingGuesses;
 
-                remainingGuesses--;
-                remainingGuessesText.textContent = remainingGuesses;
-
-                //FOR LOOP PLUS IF/ELSE TO COMPARE LETTER GUESSES WITH THE INDEX OF EACH CHARACTER IN THE COMPUTER SELECTED WORD
-                for (var j =0; j < computerSelect.length; j++) {
-                    if (computerSelect[j] === userGuess) {
-                        answerSpaces[j] = userGuess;
-                        remainingLetters--;
-                        console.log(answerSpaces.join(" "));
-                        blankText.textContent = answerSpaces.join(" ");
-                    }
-                    else if (computerSelect[j] !== userGuess) { 
-                        lettersGuessed.textContent = userGuessed;
-                    }
-                }
-
-                //FIX! MAKE IF/ELSE SO THE LETTERS DON'T REPEAT
-                //ALSO WHY WON'T THE FIRST ONE SHOW UP?
-                userGuessed.push(" " + userGuess);
-                gameOutcome();
-            }
-            else {
-                alert("Press a letter, smartass.")
-                }
-
+            gameOutcome();
+        }
+        else {
+            alert("Press a letter, smartass.")
         }
 
+        //FOR LOOP PLUS IF/ELSE TO COMPARE LETTER GUESSES WITH THE INDEX OF EACH CHARACTER IN THE COMPUTER SELECTED WORD
+        for (var j =0; j < computerSelect.length; j++) {
+            if (computerSelect[j] === userGuess) {
+                answerSpaces[j] = userGuess;
+                remainingLetters--;
+                console.log(answerSpaces.join(" "));
+                blankText.textContent = answerSpaces.join(" ");
+            }
+            else if (computerSelect[j] !== userGuess) { 
+                lettersGuessed.textContent = userGuessed;
+            }
+        }
+}
+
+gameReset();
