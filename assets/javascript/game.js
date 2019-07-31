@@ -39,30 +39,29 @@ var blankText = document.querySelector(".word-blanks");
 //FUNCTIONS
 //=============================================
 
-//GAME RESET
-    function gameReset () {
-       
-        //RESETS COMPUTER SELECTED WORD
-        computerSelect = wordChoices[Math.floor(Math.random() * wordChoices.length)];
-        answerSpaces = [];
-        for (var i = 0; i < computerSelect.length; i++) {
-            answerSpaces[i]="_";
-        }
-        remainingLetters = computerSelect.length;
-        
-
-        //RESETS BLANKS
-        blankText.textContent = answerSpaces.join(" ");
-
-        //RESETS GUESSES REMAINING & DISPLAY HTML
-        startingGuesses = 15;
-        remainingGuesses = 15;
-        remainingGuessesText.textContent = startingGuesses;
-
-        //RESETS THE USER GUESSED LETTERS
-        userGuessed = [];
-        lettersGuessed.textContent = userGuessed;
+//GAME SET
+function gameSet () {
+    
+    //RESETS COMPUTER SELECTED WORD
+    computerSelect = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+    answerSpaces = [];
+    for (var i = 0; i < computerSelect.length; i++) {
+        answerSpaces[i]="_";
     }
+    remainingLetters = computerSelect.length;
+    
+
+    //RESETS BLANKS
+    blankText.textContent = answerSpaces.join(" ");
+
+    //RESETS GUESSES REMAINING & DISPLAY HTML
+    remainingGuesses = 15;
+    remainingGuessesText.textContent = remainingGuesses;
+
+    //RESETS THE USER GUESSED LETTERS
+    userGuessed = [];
+    lettersGuessed.textContent = userGuessed;
+}
 
 
 //GAME PLAY
@@ -74,28 +73,14 @@ function gameOutcome () {
         alert("You Lose");
         losses++;
         lossesText.textContent = losses;
-        gameReset();
+        gameSet();
     } else if (remainingLetters === -1 ) {
         alert("You Win!");
         wins++;
         winsText.textContent = wins;
-        gameReset();
+        gameSet();
     }
 };
-
-//CHOSES A RANDOM WORD FROM ARRAY "WORDCHOICES"
-var computerSelect = wordChoices[Math.floor(Math.random() * wordChoices.length)];
-
-//CREATES AN EMPTY ARRAY OF UNDERSCORES TO MATCH THE NUMBER OF LETTERS IN THE RANDOM WORD FROM "COMPUTERSELECT"
-var answerSpaces = [];
-for (var i = 0; i < computerSelect.length; i++) {
-    answerSpaces[i]="_";
-}
-
-var remainingLetters = computerSelect.length;
-
-// START UP COMPUTER SELECTION • SHOWS THE PLAYER THE ANSWER SPACES AS JOINED UP STRING
-console.log(answerSpaces.join(" "));
 
 
 //INSIDE ON KEY UP
@@ -135,4 +120,4 @@ document.onkeyup = function(event) {
         }
 }
 
-gameReset();
+gameSet();
