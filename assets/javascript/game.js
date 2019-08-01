@@ -61,6 +61,7 @@ function gameSet () {
     //RESETS THE USER GUESSED LETTERS
     userGuessed = [];
     lettersGuessed = [];
+    lettersGuessedText.textContent = lettersGuessed;
 
     //RESETS CORRECT GUESS INDICATOR
     wordSuccess = false;
