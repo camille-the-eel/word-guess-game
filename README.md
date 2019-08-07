@@ -7,10 +7,15 @@ Javascript application that dynamically alters HTML based on user input.
 
 
 
-![](word-guess-giphy.gif)
+![Gif of GamePlay](word-guess-giphy.gif)
 
 =======================================================================================
 
 **Technologies Used**
 - HTML
 - Javascript
+
+=======================================================================================
+**Mockup**
+
+![UI Mockup](assets/guess-game-mockup.png)
