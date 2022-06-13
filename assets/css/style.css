@@ -1,3 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  background-color: #a3ceb5;
+  height: 8vh;
+  border-bottom: 1px solid gray;
+}
 
+p {
+  margin: 0;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+  height: 91vh;
+}
+
+.right-menu {
+  background-color: #a3ceb5;
+  padding: 10px;
+  border-right: 1px solid gray;
+}
+
+.right-menu,
+.game-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.star {
+  width: 12px;
+}
+
+.merlin {
+  width: 90%;
+  padding: 20px 20px 45px 0;
+  place-self: end;
+}
+
+#current-game {
+  padding-left: 10px;
+}
 /*# sourceMappingURL=style.css.map */

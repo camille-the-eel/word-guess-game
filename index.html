@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>QuickQuill Exam Prep</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="assets/css/reset.css"
+    />
+  </head>
+  <body>
     <nav>
-        <h1>QuickQuill <img src="assets/images/yellow-star.svg" class="star"> N.E.W.T. Edition</h1>
-        <h2>Category: Spells</h2>
+      <h1>
+        QuickQuill
+        <img src="assets/images/yellow-star.svg" class="star" /> N.E.W.T.
+        Edition
+      </h1>
+      <h2>Category: Spells</h2>
     </nav>
-    <div class="right-menu">
-        <p id="current-game">Fill In The Blank</p>
-        <p id="header">coming soon</p>
+    <div class="content-container">
+      <div class="right-menu">
+        <h4 id="current-game">Fill In The Blank</h4>
+        <!-- <p id="header">coming soon</p>
         <p class="more-games">Flashcards</p>
-        <p class="more-games">Practice Exam</p>
-        <img src="assets/images/book.svg" class="book">
+        <p class="more-games">Practice Exam</p> -->
+        <img src="assets/images/book.svg" class="book" />
+      </div>
+      <div class="game-box">
+        <div class="game-wrapper">
+          <h3>
+            Wins:
+            <span class="wins">0</span> Losses: <span class="losses">0</span
+            ><br />
+            Guesses Remaining: <span class="guesses">15</span>
+          </h3>
+          <h3>Letters Guessed: <span class="letters-guessed"></span></h3>
+          <div class="word-blanks"></div>
+        </div>
+        <div class="instructions">
+          <h4>Instructions</h4>
+          <p>
+            Complete the spell before you run out of guesses! Test your spelling
+            of terms commonly found on your written N.E.W.T. exams.
+          </p>
+        </div>
+      </div>
+      <img src="assets/images/wizard.svg" class="merlin" />
     </div>
-    <div class="game-box">
-        <h3>Guesses Remaining: <span class="guesses">15</span> Wins: <span class="wins">0</span> Losses: <span class="losses">0</span></h3>
-        <h3>Letters Guessed: <span class="letters-guessed"></span></h3>
-        <div class="word-blanks"></div>
-    </div>
-    <div class="img-box">
-        <img src="assets/images/wizard.svg" class="merlin">
-    </div>
-    <div class="instructions">
-        <p class="header-instruct">Instructions</p>
-        <p class="instruct">Complete the spell before you run out of guesses! Test your spelling of terms commonly found on your written N.E.W.T. exams.</p>
-    </div>
-</body>
-    <script src="assets/javascript/game.js"></script>
+  </body>
+  <script src="assets/javascript/game.js"></script>
 </html>
